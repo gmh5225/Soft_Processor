@@ -1,0 +1,89 @@
+In
+Push ax
+In
+Push bx
+In
+Push cx
+Push 0
+Pop ax
+Eq Azero
+Pop bx
+Pop bx
+Mul
+Push 4
+Pop ax
+Pop cx
+Mul
+Mul
+Sub
+Push dx
+Push 0
+Eq Diszero
+Push dx
+Push 0
+Ja DisMore
+Push dx
+Push 0
+Ja DisLess
+Azero:
+Push 0
+Pop bx
+Eq Bzero
+Push -1
+Pop cx
+Mul
+Pop bx
+Div
+Out 
+Jp Final
+Diszero:
+Push -1
+Pop bx
+Mul
+Push 2
+Div
+Pop ax
+Div
+Out 
+Jp Final
+DisMore:
+Push -1
+Pop bx
+Mul
+Pop dx
+Sqrt
+Add
+Push 2
+Div
+Pop ax
+Div
+Out 
+Push -1
+Pop bx
+Mul
+Pop dx
+Sqrt
+Sub
+Push 2
+Div
+Pop ax
+Div
+Out 
+Jp Final
+DisLess:
+Push -1
+Out
+Jp Final
+Bzero:
+Push 0
+Pop cx
+Eq Czero
+Push -1
+Out
+Jp Final
+Czero:
+Push 666
+Out
+Jp Final
+Final:
+End
