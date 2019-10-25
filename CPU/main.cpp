@@ -11,11 +11,13 @@ int main() {
     MYCPU CPU = {};
 
     StackConstruct(&CPU.stk);
+    StackConstruct(&CPU.Addresses);
 
-    CPU_Reader(buffer, &CPU.stk, &CPU);
+    CPU_Reader(buffer, &CPU);
     printf("Program finished successfully!\n");
 
     StackDestruct(&CPU.stk);
-
+    StackDestruct(&CPU.Addresses);
+    
     return 0;
 }
